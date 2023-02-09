@@ -28,6 +28,9 @@
     border-width: 5px;
     border-radius: 10px;
   }
+  progress{
+    background-color: #674188;
+  }
   .ethxn-header {
     color:black;
     font-family: SF-Mono-Regular;
