@@ -1,11 +1,15 @@
 @font-face {
     font-family: SF-Pro-Display-Light;
-    src: url(https://www.ethxn.xyz/resources/fonts/SF-Pro-Display-Light.otf);
+    src: url(../fonts/SF-Pro-Display-Light.otf);
   }
 @font-face {
     font-family: SF-Pro-Display-Heavy;
     src: url(../fonts/SF-Pro-Display-Heavy.otf);
   }
+@font-face {
+  font-family: SF-Mono-Regular;
+  src: url(../fonts/SF-Mono-Regular.otf);
+}
   .body{
     background-color: #FFFBF5;
   }
@@ -14,15 +18,39 @@
   }
   .cat-picture {
     display: block;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 5px 5px 0 #C3ACD0;
     color: black;
     border-color: #674188;
     border-style: solid;
-    border-width: 2.5px;
+    border-width: 5px;
     border-radius: 10px;
+  }
+  .ethxn-header {
+    color:black;
+    font-family: SF-Mono-Regular;
+    margin-top: 13px;
+    text-align: center;
+  }
+  .ethxn-header:link{
+    color: black;
+  }
+  .ethxn-header:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: #C3ACD0;
+    transition: all 150ms;
+    cursor: pointer;
+  }
+  .ethxn-header:not(:hover){
+    transition: all 150ms;
+    text-decoration: none;
+
+  }
+  .ethxn-header:active {
+    background-color: #674188;
   }
   p {
     color: black;
