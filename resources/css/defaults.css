@@ -33,6 +33,7 @@
     font-family: SF-Mono-Regular;
     margin-top: 13px;
     text-align: center;
+    display: block;
   }
   .ethxn-header:link{
     color: black;
@@ -40,7 +41,6 @@
   .ethxn-header:hover {
     color: black;
     text-decoration: underline;
-    background-color: #C3ACD0;
     transition: all 150ms;
     cursor: pointer;
   }
@@ -50,7 +50,7 @@
 
   }
   .ethxn-header:active {
-    background-color: #674188;
+    opacity: 0.5;
   }
   p {
     color: black;
