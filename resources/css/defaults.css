@@ -10,8 +10,11 @@
   font-family: SF-Mono-Regular;
   src: url(../fonts/SF-Mono-Regular.otf);
 }
-  .body{
-    background-color: #FFFBF5;
+  .loader{
+    color:black;
+    font-family: SF-Mono-Regular;
+    text-align: center;
+    text-size-adjust: -5px;
   }
   .center {
     text-align: center;
@@ -50,10 +53,22 @@
   .ethxn-header:not(:hover){
     transition: all 150ms;
     text-decoration: none;
-
   }
   .ethxn-header:active {
     opacity: 0.5;
+  }
+  .aida-text{
+    color:#674188;
+    text-decoration: underline;
+  }
+  .aida-text:link{
+    color: #674188;
+  }
+  .aida-text:hover{
+    color: #674188;
+    transition: all 150ms;
+    font-weight: bolder;
+    cursor: pointer;
   }
   p {
     color: black;

@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/defaults.css">
   <body style="background-color: #FFFBF5;">
-    <div style="text-align: center;">
+    <div >
       <a href="https://www.ethxn.xyz/" class="ethxn-header">ethxn.xyz</a>
     </div>
+    <div class="loader" id="loaderDiv"></div>
     <h1 class="center">
       Hi, I'm 
       <foo style="color: #C3ACD0;">
         Ethan</foo>!
     </h1>
-    <article style="">
+    <article>
       <h2 class="center">About me</h2>
       <p class="center" style="margin-bottom: 150px;">
-        Your average computer science nerd.
+        I'm your average computer science nerd.
+        I love games, music, and my amazing girlfriend
+        <a class="aida-text" href="https://www.instagram.com/aidajoyosk">Aida</a>.
       </p>
     </article>
     <article class="center">
-      <h2>
+      <h2 hidden>
         Skills
       </h2>
       <div class="center">
@@ -30,4 +33,19 @@
       </div>
     </article>
   </body>
+  <script>
+    const text = ["loading |", "loading \\", "loading -", "loading /"];
+    counter = 0;
+    secondCounter = 5;
+    while (secondCounter > 0) {
+      if (counter == 3) {
+        counter = 0;
+      } else {
+        counter = counter + 1;
+      }
+      secondCounter = secondCounter + 1;
+      document.getElementById('loaderDiv').innerHTML = text[counter];
+      setTimeout(1);
+    }
+  </script>
 </html>
