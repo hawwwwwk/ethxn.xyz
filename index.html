@@ -9,7 +9,7 @@
       <a href="https://www.ethxn.xyz/" class="ethxn-header">ethxn.xyz</a>
     </div>
     <div class="loader" id="loaderDiv"></div>
-    <h1 class="center">
+    <h1 class="center" style="margin-bottom: 100px;">
       Hi, I'm 
       <foo style="color: #C3ACD0;">
         Ethan</foo>!
@@ -33,19 +33,4 @@
       </div>
     </article>
   </body>
-  <script>
-    const text = ["loading |", "loading \\", "loading -", "loading /"];
-    counter = 0;
-    secondCounter = 5;
-    while (secondCounter > 0) {
-      if (counter == 3) {
-        counter = 0;
-      } else {
-        counter = counter + 1;
-      }
-      secondCounter = secondCounter + 1;
-      document.getElementById('loaderDiv').innerHTML = text[counter];
-      setTimeout(1);
-    }
-  </script>
 </html>
