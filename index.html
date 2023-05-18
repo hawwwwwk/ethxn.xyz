@@ -13,13 +13,15 @@
                 </h1>
             </div>
             <div class="theme-changer">
-                <img alt="arrow" id="theme-pointer-arrow" class="arrow" src="resources/icons/arrow-down-left.svg" height="50">
-                <p1 id="theme-pointer-text" class="theme-pointer-text">
-                    Toggle between<br>light/dark mode!
-                </p1>
-                <p1 id="theme-pointer-hide"class="theme-pointer-hide" onclick="hideThemeArrow()">
-                    (hide)
-                </p1>
+                <div>
+                    <img alt="arrow" id="theme-pointer-arrow" class="arrow" src="resources/icons/arrow-down-left.svg" height="50">
+                    <p1 id="theme-pointer-text" class="theme-pointer-text">
+                        Toggle between<br>light/dark mode!
+                    </p1>
+                    <p1 id="theme-pointer-hide"class="theme-pointer-hide" onclick="hideThemeCookie()">
+                        (hide)
+                    </p1>
+                </div>
                 <p1 class="pardon">
                     Pardon my dust...
                 </p1>
@@ -53,20 +55,24 @@
                 toggleThemeButton.addEventListener('click', function(){toggleTheme()});
                 document.getElementById("theme-pointer-hide").addEventListener('click', function(){firstTimeCookie()});
 
-                function GetCookie(name) {
-                    var arg=name+"=";
-                    var alen=arg.length;
-                    var clen=document.cookie.length;
-                    var i=0;
-                    while (i<clen) {
-                        var j=i+alen;
-                        if (document.cookie.substring(i,j)==arg)
-                        return "here";
-                        i=document.cookie.indexOf(" ",i)+1;
-                        if (i==0) break;
+                function getCookie(name) {
+                    var dc = document.cookie;
+                    var prefix = name + "=";
+                    var begin = dc.indexOf("; " + prefix);
+                    var end = document.cookie.indexOf(";", begin);
+                    if (begin == -1) {
+                        begin = dc.indexOf(prefix);
+                        if (begin != 0) return null;
                     }
-                    return null;
-                }
+                    else
+                    {
+                        begin += 2;
+                        if (end == -1) {
+                        end = dc.length;
+                        }
+                    }
+                    return decodeURI(dc.substring(begin + prefix.length, end));
+                } 
                 function hideThemeArrow(){
                     document.getElementById("theme-pointer-arrow").hidden = true;
                     document.getElementById("theme-pointer-text").hidden = true;
@@ -78,16 +84,20 @@
                     document.getElementById("theme-pointer-hide").hidden = false;
                 }
                 function firstTimeCookie(){
-                    var visit=GetCookie("themeTipArrowHidden");
+                    var visit=getCookie("themeTipArrowHidden");
                     if (visit==null){
-                        var expire=new Date();
-                        expire=new Date(expire.getTime()+7776000000);
-                        document.cookie="themeTipArrowHidden=here; expires="+expire + ";path=/";
                         showThemeArrow();
                     } else {
                         hideThemeArrow();
                     }
                 }
+                function hideThemeCookie(){
+                    var expire=new Date();
+                    expire=new Date(expire.getTime()+7776000000);
+                    document.cookie="themeTipArrowHidden=here; expires="+expire + ";path=/";
+                    hideThemeArrow();
+                }
+                firstTimeCookie()
             </script>
         </div>
     </body>
