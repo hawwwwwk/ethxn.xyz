@@ -12,6 +12,7 @@
                     ethxn.xyz
                 </h1>
             </div>
+            
             <div class="theme-changer">
                 <div>
                     <img alt="arrow" id="theme-pointer-arrow" class="arrow" src="resources/icons/arrow-down-left.svg" height="50">
@@ -23,30 +24,43 @@
                     </p1>
                 </div>
                 <p1 class="pardon">
-                    Pardon my dust...
+                    Please pardon the dust...<br><br><br>
                 </p1>
-                <button id="toggle-theme-button"class="toggle-theme-button">
+                <button id="toggle-theme-button" class="toggle-theme-button">
                     <img alt="moon/sun" id="sun-moon-icon" class="filter-toggle-on" src="resources/icons/sun.svg" height="40">
                 </button>
+                <img alt="Space" id="pardon-image" class="pardon-image" src="resources/icons/undraw_light.svg" height="200">
+                <p1 class="pardon">
+                    <br><br>...For now, you can check out my 
+                </p1>
+                <button onclick="window.open('https://github.com/hawwwwwk', '_blank')" id="github" class="github-button">
+                    GitHub
+                </button>
+                <p1 class="pardon">!</p1>
             </div>
             <script>
                 const toggleThemeButton = document.getElementById("toggle-theme-button");
                 function toggleTheme(){
                     var element = document.body;
                     var eImg = document.getElementById("sun-moon-icon");
+                    var fImg = document.getElementById("pardon-image");
                     var eHeading = document.getElementById("heading");
                     var eArrow = document.getElementById("theme-pointer-arrow");
+                    var eGitHub = document.getElementById("github");
 
                     element.classList.toggle("dark-body");
                     eImg.classList.toggle("dark-filter-toggle-on");
                     eHeading.classList.toggle("dark-gradient-text");
                     eArrow.classList.toggle("dark-arrow");
                     toggleThemeButton.classList.toggle("dark-toggle-theme-button");
+                    eGitHub.classList.toggle("dark-github-button");
                     
                     if(element.classList.contains("dark-body")){
                         eImg.setAttribute("src", "resources/icons/moon.svg");
+                        fImg.setAttribute("src", "resources/icons/undraw_dark.svg");
                     } else{
                         eImg.setAttribute("src", "resources/icons/sun.svg");
+                        fImg.setAttribute("src", "resources/icons/undraw_light.svg");
                     }
                 }
                 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
