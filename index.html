@@ -1,41 +1,94 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Ethxn</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/defaults.css">
-  <body style="background-color: #FFFBF5;">
-    <div >
-      <a href="https://www.ethxn.xyz/" class="ethxn-header">ethxn.xyz</a>
-    </div>
-    <div class="loader" id="loaderDiv"></div>
-    <h1 class="center" style="margin-bottom: 100px;">
-      Hi, I'm 
-      <foo style="color: #C3ACD0;">
-        Ethan</foo>
-      <img src="Z71_4513.jpg" alt="picture of me lol" class="center" width="1000" height="2000" hidden>
-    </h1>
+    <head>
+        <title>ethxn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id="refsheet" rel="stylesheet" href="resources/css/defaults.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                <h1 id="heading" class="gradient-text">
+                    ethxn.xyz
+                </h1>
+            </div>
+            <div class="theme-changer">
+                <img alt="arrow" id="theme-pointer-arrow" class="arrow" src="resources/icons/arrow-down-left.svg" height="50">
+                <p1 id="theme-pointer-text" class="theme-pointer-text">
+                    Toggle between<br>light/dark mode!
+                </p1>
+                <p1 id="theme-pointer-hide"class="theme-pointer-hide" onclick="hideThemeArrow()">
+                    (hide)
+                </p1>
+                <p1 class="pardon">
+                    Pardon my dust...
+                </p1>
+                <button id="toggle-theme-button"class="toggle-theme-button">
+                    <img alt="moon/sun" id="sun-moon-icon" class="filter-toggle-on" src="resources/icons/sun.svg" height="40">
+                </button>
+            </div>
+            <script>
+                const toggleThemeButton = document.getElementById("toggle-theme-button");
+                function toggleTheme(){
+                    var element = document.body;
+                    var eImg = document.getElementById("sun-moon-icon");
+                    var eHeading = document.getElementById("heading");
+                    var eArrow = document.getElementById("theme-pointer-arrow");
 
-    <article>
-      <h2 class="center">About me</h2>
-      <p class="center" style="margin-bottom: 20px;">
-        I'm your average computer science nerd.
-        I love games, music, and my amazing girlfriend
-        <a class="aida-text" href="https://www.instagram.com/aidajoyosk">Aida</a>.
-      </p>
-      <p class="center"><i>
-        I'll add more to this website this summer. School has me way too busy to keep working on this.</i>
-      </p>
-    </article>
-    <article class="center">
-      <h2 hidden>
-        Skills
-      </h2>
-      <div class="center">
-        <h4 class="skills-heading" style="margin-left: -115px; margin-bottom: -5px;">
-          
-        </h4>
-      </div>
-    </article>
-  </body>
+                    element.classList.toggle("dark-body");
+                    eImg.classList.toggle("dark-filter-toggle-on");
+                    eHeading.classList.toggle("dark-gradient-text");
+                    eArrow.classList.toggle("dark-arrow");
+                    toggleThemeButton.classList.toggle("dark-toggle-theme-button");
+                    
+                    if(element.classList.contains("dark-body")){
+                        eImg.setAttribute("src", "resources/icons/moon.svg");
+                    } else{
+                        eImg.setAttribute("src", "resources/icons/sun.svg");
+                    }
+                }
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    toggleTheme();
+                }
+                toggleThemeButton.addEventListener('click', function(){toggleTheme()});
+                document.getElementById("theme-pointer-hide").addEventListener('click', function(){firstTimeCookie()});
+
+                function GetCookie(name) {
+                    var arg=name+"=";
+                    var alen=arg.length;
+                    var clen=document.cookie.length;
+                    var i=0;
+                    while (i<clen) {
+                        var j=i+alen;
+                        if (document.cookie.substring(i,j)==arg)
+                        return "here";
+                        i=document.cookie.indexOf(" ",i)+1;
+                        if (i==0) break;
+                    }
+                    return null;
+                }
+                function hideThemeArrow(){
+                    document.getElementById("theme-pointer-arrow").hidden = true;
+                    document.getElementById("theme-pointer-text").hidden = true;
+                    document.getElementById("theme-pointer-hide").hidden = true;
+                }
+                function showThemeArrow(){
+                    document.getElementById("theme-pointer-arrow").hidden = false;
+                    document.getElementById("theme-pointer-text").hidden = false;
+                    document.getElementById("theme-pointer-hide").hidden = false;
+                }
+                function firstTimeCookie(){
+                    var visit=GetCookie("themeTipArrowHidden");
+                    if (visit==null){
+                        var expire=new Date();
+                        expire=new Date(expire.getTime()+7776000000);
+                        document.cookie="themeTipArrowHidden=here; expires="+expire + ";path=/";
+                        showThemeArrow();
+                    } else {
+                        hideThemeArrow();
+                    }
+                }
+            </script>
+        </div>
+    </body>
 </html>

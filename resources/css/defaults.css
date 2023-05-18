@@ -1,84 +1,167 @@
+:root{
+    --light-background: #F9F5E7;
+    --light-primary: #FEA1A1;
+    --light-shadow: #cbc8bd;
+    --dark-background: #404258;
+    --dark-primary: #e6e7da;
+    --dark-shadow: #303243;
+}
+
+@font-face {
+    font-family: Blogh;
+    src: url(../fonts/NEON\ CLUB\ MUSIC_bold.otf);
+}
+
+@font-face {
+    font-family: SF-SF-Pro-Display-Heavy;
+    src: url(../fonts/SF-Pro-Display-Heavy.otf);
+}
+
 @font-face {
     font-family: SF-Pro-Display-Light;
     src: url(../fonts/SF-Pro-Display-Light.otf);
-  }
-@font-face {
-    font-family: SF-Pro-Display-Heavy;
-    src: url(../fonts/SF-Pro-Display-Heavy.otf);
-  }
-@font-face {
-  font-family: SF-Mono-Regular;
-  src: url(../fonts/SF-Mono-Regular.otf);
 }
-  .loader{
-    color:black;
-    font-family: SF-Mono-Regular;
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.arrow{
+    transform: rotate(10deg);
+    height: 1;
+    left: 100px;
+    bottom:45px;
+    position: fixed;
+    filter: invert(96%) sepia(10%) saturate(7078%) hue-rotate(295deg) brightness(101%) contrast(99%);
+}
+
+.dark-arrow{
+    filter: invert(96%) sepia(6%) saturate(300%) hue-rotate(23deg) brightness(99%) contrast(86%);
+}
+
+.theme-pointer-text{
+    font-size: 15px;
+    transform: rotate(10deg);
     text-align: center;
-    text-size-adjust: -5px;
-  }
-  .center {
-    text-align: center;
-  }
-  .cat-picture {
-    display: block;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 5px 5px 0 #C3ACD0;
-    color: black;
-    border-color: #674188;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 10px;
-  }
-  progress{
-    background-color: #674188;
-  }
-  .ethxn-header {
-    color:black;
-    font-family: SF-Mono-Regular;
-    margin-top: 13px;
-    text-align: center;
-    display: block;
-  }
-  .ethxn-header:link{
-    color: black;
-  }
-  .ethxn-header:hover {
-    color: black;
-    text-decoration: underline;
-    transition: all 150ms;
-    cursor: pointer;
-  }
-  .ethxn-header:not(:hover){
-    transition: all 150ms;
-    text-decoration: none;
-  }
-  .ethxn-header:active {
+    font-family: SF-SF-Pro-Display-Heavy, sans-serif;
+    align-content: center;
+    position: fixed;
+    left: 100px;
+    bottom: 90px;
+}
+
+.theme-pointer-hide{
     opacity: 0.5;
-  }
-  .aida-text{
-    color:#674188;
-    text-decoration: underline;
-  }
-  .aida-text:link{
-    color: #674188;
-  }
-  .aida-text:hover{
-    color: #674188;
-    transition: all 150ms;
-    font-weight: bolder;
+    font-size: 12px;
+    transform: rotate(10deg);
+    text-align: center;
+    font-family: SF-SF-Pro-Display-Heavy, sans-serif;
+    align-content: center;
+    position: fixed;
+    left: 160px;
+    bottom: 70px;
+}
+
+.theme-pointer-hide:hover{
+    transition: all 100ms;
     cursor: pointer;
-  }
-  p {
-    color: black;
-    font-family: SF-Pro-Display-Light;
-  }
-  h1 {
-    color: black;
-    font-family: SF-Pro-Display-Heavy;
-  }
-  h2{
-    color:black;
-    font-family: SF-Pro-Display-Heavy;
-  }
+    opacity: 0.9;
+}
+
+.toggle-theme-button{
+    width: 85px;
+    height: auto;
+    transition: all 100ms;
+    padding: 8px;
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self:flex-end;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position:fixed;
+    bottom: 0;
+    background-color: var(--light-background);
+}
+
+.toggle-theme-button:hover{
+    box-shadow: 2px 2px 5px var(--light-shadow);
+    transition: all 100ms;
+    background-color: var(--light-primary);
+    cursor: pointer;
+}
+
+.toggle-theme-button:hover .filter-toggle-on{
+    filter: invert(89%) sepia(8%) saturate(583%) hue-rotate(331deg) brightness(112%) contrast(95%);
+}
+
+.toggle-theme-button:active .filter-toggle-on{
+    transition: all 150ms;
+    transform: scale(1.1);
+}
+
+.filter-toggle-on{
+    filter: invert(97%) sepia(9%) saturate(6687%) hue-rotate(294deg) brightness(98%) contrast(104%);
+}
+
+body{
+    text-align: center;
+    transition: all 100ms;
+    background-color: var(--light-background);
+    color: var(--light-primary);
+}
+
+.pardon{
+    font-family: SF-Pro-Display-Light, sans-serif;
+}
+
+.gradient-text {
+    user-select: none;
+    margin-top: 100px;
+    font-size: 13vw;
+    text-align: center;
+    font-family: Blogh, sans-serif;
+    background-image: linear-gradient(45deg, #ECCDB4, #FEA1A1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-gradient-text {
+    background-image: linear-gradient(45deg, #F1F6F9, #394867);
+}
+
+.dark-body{
+    transition: all 100ms;
+    background-color: var(--dark-background);
+    color: var(--dark-primary);
+}
+
+.dark-toggle-theme-button{
+    transition: all 100ms;
+    background-color: var(--dark-background);
+    background-size: auto;
+}
+
+.dark-toggle-theme-button:hover{
+    transition: all 100ms;
+    box-shadow: 3px 3px 5px var(--dark-shadow);
+    background-color: var(--dark-primary);
+}
+
+.dark-toggle-theme-button:hover .dark-filter-toggle-on{
+    transition: all 100ms;
+    filter: invert(25%) sepia(17%) saturate(751%) hue-rotate(197deg) brightness(92%) contrast(91%);
+}
+
+.dark-filter-toggle-on{
+    transition: all 100ms;
+    filter: invert(96%) sepia(6%) saturate(300%) hue-rotate(23deg) brightness(99%) contrast(86%);
+
+}
+
+
