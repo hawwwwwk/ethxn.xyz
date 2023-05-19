@@ -117,7 +117,6 @@ body{
 
 .gradient-text {
     user-select: none;
-    margin-top: 100px;
     font-size: 13vw;
     text-align: center;
     -webkit-text-fill-color: transparent;
@@ -199,4 +198,8 @@ body{
 .dark-toggle-theme-button:active .dark-filter-toggle-on{
     transition: all 150ms;
     transform: scale(1.1);
+}
+
+h1{
+    margin-bottom: 25px;
 }
