@@ -98,7 +98,7 @@
                     document.getElementById("theme-pointer-hide").hidden = false;
                 }
                 function firstTimeCookie(){
-                    var visit=getCookie("themeTipArrowHidden");
+                    var visit=getCookie("have-a-cookie-:3");
                     if (visit==null){
                         showThemeArrow();
                     } else {
@@ -108,7 +108,7 @@
                 function hideThemeCookie(){
                     var expire=new Date();
                     expire=new Date(expire.getTime()+7776000000);
-                    document.cookie="themeTipArrowHidden=here; expires="+expire + ";path=/";
+                    document.cookie="have-a-cookie-:3=here; expires="+expire + ";path=/";
                     hideThemeArrow();
                 }
                 firstTimeCookie()

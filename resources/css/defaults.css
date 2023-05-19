@@ -201,5 +201,6 @@ body{
 }
 
 h1{
-    margin-bottom: 25px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
