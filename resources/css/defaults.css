@@ -120,13 +120,14 @@ body{
     user-select: none;
     font-size: 13vw;
     text-align: center;
+    padding-top: 7vh!important;
     -webkit-text-fill-color: transparent;
     font-family: Blogh, sans-serif;
     background-image: linear-gradient(45deg, #ECCDB4, #FEA1A1);
     background-clip: text;
     -webkit-background-clip: text;
     margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .dark-gradient-text {
