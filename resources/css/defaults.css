@@ -109,25 +109,26 @@ body{
     transition: all 100ms;
     background-color: var(--light-background);
     color: var(--light-primary);
+    overflow: scroll;
 }
 
 .pardon{
     font-family: SF-Pro-Display-Light, sans-serif;
-    font-size: 1.5vw;
+    font-size: 2.5vh;
 }
 
 .gradient-text {
     user-select: none;
-    font-size: 13vw;
+    font-size: 7vw;
     text-align: center;
-    padding-top: 7vh!important;
+    padding-top: 2.5vh!important;
     -webkit-text-fill-color: transparent;
     font-family: Blogh, sans-serif;
     background-image: linear-gradient(45deg, #ECCDB4, #FEA1A1);
     background-clip: text;
     -webkit-background-clip: text;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 5;
 }
 
 .dark-gradient-text {
@@ -201,4 +202,17 @@ body{
 .dark-toggle-theme-button:active .dark-filter-toggle-on{
     transition: all 150ms;
     transform: scale(1.1);
+}
+
+
+
+::-webkit-scrollbar:vertical{
+    background-color: #1c1d2b;
+    width: 12px;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #1c1d2b);
+    border-radius: 6px
 }
