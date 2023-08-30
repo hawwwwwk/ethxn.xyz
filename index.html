@@ -1,119 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <title>ethxn</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link id="refsheet" rel="stylesheet" href="resources/css/defaults.css">
-    </head>
-    <body>
-        <div>
-            <div>
-                <h1 id="heading" class="gradient-text">
-                    ethxn.xyz
-                </h1>
-            </div>
-            
-            <div class="theme-changer">
-                <div>
-                    <img alt="arrow" id="theme-pointer-arrow" class="arrow" src="resources/icons/arrow-down-left.svg" height="50">
-                    <p1 id="theme-pointer-text" class="theme-pointer-text">
-                        Toggle between<br>light/dark mode!
-                    </p1>
-                    <p1 id="theme-pointer-hide"class="theme-pointer-hide" onclick="hideThemeCookie()">
-                        (hide)
-                    </p1>
-                </div>
-                <p1 class="pardon">
-                    Please pardon the dust...<br><br><br>
-                </p1>
-                <button id="toggle-theme-button" class="toggle-theme-button">
-                    <img alt="moon/sun" id="sun-moon-icon" class="filter-toggle-on" src="resources/icons/sun.svg" height="40">
-                </button>
-                <img alt="Space" id="pardon-image" class="pardon-image" src="resources/icons/undraw_light.svg" height="200">
-                <img alt="loader" src="resources/icons/undraw_dark.svg" hidden>
-                <p1 class="pardon">
-                    <br><br>...For now, you can check out my 
-                </p1>
-                <button onclick="window.open('https://github.com/hawwwwwk', '_blank')" id="github" class="github-button">
-                    GitHub
-                </button>
-                <p1 class="pardon">!</p1>
-            </div>
-            <script>
-                const toggleThemeButton = document.getElementById("toggle-theme-button");
-                function toggleTheme(){
-                    var element = document.body;
-                    var eImg = document.getElementById("sun-moon-icon");
-                    var fImg = document.getElementById("pardon-image");
-                    var eHeading = document.getElementById("heading");
-                    var eArrow = document.getElementById("theme-pointer-arrow");
-                    var eGitHub = document.getElementById("github");
-
-                    element.classList.toggle("dark-body");
-                    eImg.classList.toggle("dark-filter-toggle-on");
-                    eHeading.classList.toggle("dark-gradient-text");
-                    eArrow.classList.toggle("dark-arrow");
-                    toggleThemeButton.classList.toggle("dark-toggle-theme-button");
-                    eGitHub.classList.toggle("dark-github-button");
-                    
-                    if(element.classList.contains("dark-body")){
-                        eImg.setAttribute("src", "resources/icons/moon.svg");
-                        fImg.setAttribute("src", "resources/icons/undraw_dark.svg");
-                    } else{
-                        eImg.setAttribute("src", "resources/icons/sun.svg");
-                        fImg.setAttribute("src", "resources/icons/undraw_light.svg");
-                    }
-                }
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    toggleTheme();
-                }
-                toggleThemeButton.addEventListener('click', function(){toggleTheme()});
-                document.getElementById("theme-pointer-hide").addEventListener('click', function(){firstTimeCookie()});
-
-                function getCookie(name) {
-                    var dc = document.cookie;
-                    var prefix = name + "=";
-                    var begin = dc.indexOf("; " + prefix);
-                    var end = document.cookie.indexOf(";", begin);
-                    if (begin == -1) {
-                        begin = dc.indexOf(prefix);
-                        if (begin != 0) return null;
-                    }
-                    else
-                    {
-                        begin += 2;
-                        if (end == -1) {
-                        end = dc.length;
-                        }
-                    }
-                    return decodeURI(dc.substring(begin + prefix.length, end));
-                } 
-                function hideThemeArrow(){
-                    document.getElementById("theme-pointer-arrow").hidden = true;
-                    document.getElementById("theme-pointer-text").hidden = true;
-                    document.getElementById("theme-pointer-hide").hidden = true;
-                }
-                function showThemeArrow(){
-                    document.getElementById("theme-pointer-arrow").hidden = false;
-                    document.getElementById("theme-pointer-text").hidden = false;
-                    document.getElementById("theme-pointer-hide").hidden = false;
-                }
-                function firstTimeCookie(){
-                    var visit=getCookie("have-a-cookie-:3");
-                    if (visit==null){
-                        showThemeArrow();
-                    } else {
-                        hideThemeArrow();
-                    }
-                }
-                function hideThemeCookie(){
-                    var expire=new Date();
-                    expire=new Date(expire.getTime()+7776000000);
-                    document.cookie="have-a-cookie-:3=here; expires="+expire + ";path=/";
-                    hideThemeArrow();
-                }
-                firstTimeCookie()
-            </script>
-        </div>
-    </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile viewport -->
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="resources/css/main.css">
+    
+    <title>ethxn &lt;3</title>
+  </head>
+  <body>
+    <div class="nav-body">  
+      <a class="center-text sitename" href="https://ethxn.xyz/">ethxn.xyz</a>
+    </div>
+    
+    <div class="banner-content">
+      <div class="png-main-circle-container">
+        <img class="png-main-circle center-img" src="resources/media/png-banner-main.png" alt="me!">
+      </div>
+      <h1 class="banner-title center-text">Ethan Mahlke</h1>
+    </div>
+    <div class="github-button-container">
+      <a class="github-button" href="https://github.com/hawwwwwk" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </body>
 </html>
