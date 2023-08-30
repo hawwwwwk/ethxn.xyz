@@ -1,0 +1,123 @@
+:root{
+    --text: #f7fcfd;
+    --background: #0b2328;
+    --primary: #ba4a36;
+    --secondary: #12343a;
+    --accent: #5b8c95;
+  }
+  
+  body{
+    background-color: var(--background);
+    color: var(--text);
+  }
+  
+  h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  nav{
+    margin: auto;
+    padding: 0%;
+  }
+  
+  .center-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .center-text{
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .sitename{
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    font-size: 110%;
+    font-family: 'Roboto Mono', monospace;
+    justify-content: center;
+    width: fit-content;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sitename:hover{
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  
+  .png-main-circle{
+    border-style: solid;
+    border-width: thick;
+    border-color: var(--primary);
+    border-radius: 50%;
+    margin-top: 3%;
+    width: 20%; 
+  }
+  
+  .banner-title{
+    color: white;
+    width: fit-content;
+  }
+  
+  .banner-title:hover{
+    background: linear-gradient(120deg, var(--primary), var(--accent), var(--primary));
+    background-size: 200% 2%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .github-button-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .github-button{
+    color: var(--text);
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: var(--primary);
+    border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .github-button:hover{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px 0px 1px var(--secondary) ;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .png-main-circle{
+      width: 50%;
+    }
+  
+    .banner-title{
+      font-size: 10vw;
+    }
+  }
