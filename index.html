@@ -22,7 +22,7 @@
     
     <div class="email-button-container">
       <a class="email-button" href="mailto:ethanmahlke@gmail.com?subject=your title&body=The message">
-        Email (*^^*)♡
+        Email me!!
       </a>
       <a class="copy-email-button" onclick="copyEmailButtonOnClick()">
         <svg id="clipboard-svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="">
@@ -39,13 +39,17 @@
       let i = 0
 
       function copyEmailButtonOnClick() {
+        document.getElementsByClassName("email-button")[0].innerHTML = "Copied :D";
+        setTimeout(function(){
+          document.getElementsByClassName("email-button")[0].innerHTML = "Email me!!";
+        }, 2000);
         navigator.clipboard.writeText("ethanmahlke@gmail.com");
         if (i === 0){
+          
           document.getElementById("clipboard-svg").classList.toggle("hidden");
           document.getElementById("clipboard-svg-fill").classList.toggle("hidden");
           i++;
         }
-        
       }
     </script>
   </body>

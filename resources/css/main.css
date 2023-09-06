@@ -57,15 +57,6 @@
     color: white;
     width: fit-content;
   }
-  
-  .banner-title:hover{
-    background: linear-gradient(120deg, var(--primary), var(--accent), var(--primary));
-    background-size: 200% 2%;
-    animation: gradient 5s ease infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 
   .links-container{
     display: flex;
@@ -80,9 +71,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     margin: 10px;
     height: 4em;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 
   .copy-email-button,
@@ -121,6 +115,29 @@
 
   .hidden{
     display: none;
+  }
+
+  .clipboard-notification{
+    text-align: center;
+    margin-left: 21vw;
+    background:var(--accent);
+    border-radius: 10px;
+    width:100px;
+    height:30px;
+    position: fixed;
+    display: inline;
+  }
+
+  .clipboard-notification:before{
+    content:"";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: 5px;
+    left: -16px; 
+    border-width: 10px;
+    border-color: transparent var(--accent) transparent transparent;
+    border-style: solid;
   }
 
   #clipboard-svg{
