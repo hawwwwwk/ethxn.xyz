@@ -94,6 +94,10 @@
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
   }
+  .copy-email-button:active{
+    transition: all 0.3s ease;
+    background-color: var(--secondary);
+  }
   
   .email-button{
     padding: 1em 2em;

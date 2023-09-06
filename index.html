@@ -17,7 +17,7 @@
     </div>
 
     <div class="links-container">
-      <p>hi</p>
+      <p class="hidden">hi</p>
     </div>
     
     <div class="email-button-container">
@@ -39,7 +39,7 @@
       let i = 0
 
       function copyEmailButtonOnClick() {
-        document.getElementsByClassName("email-button")[0].innerHTML = "Copied :D";
+        document.getElementsByClassName("email-button")[0].innerHTML = "Copied ->";
         setTimeout(function(){
           document.getElementsByClassName("email-button")[0].innerHTML = "Email me!!";
         }, 2000);
