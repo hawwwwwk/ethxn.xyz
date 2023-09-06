@@ -11,14 +11,6 @@
     color: var(--text);
   }
   
-  h1{
-    font-family: 'Inter', sans-serif;
-    font-size: 48px;
-    letter-spacing: -1px;
-    font-weight: 700;
-    margin: 0;
-  }
-  
   nav{
     margin: auto;
     padding: 0%;
@@ -74,50 +66,63 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
-  .github-button-container{
+
+  .links-container{
     display: flex;
     justify-content: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%;
   }
   
-  .github-button{
+  .email-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    height: 4em;
+  }
+
+  .copy-email-button,
+  .email-button{
+    display: inline-flex;
+    margin: 0 3px;
+  }
+
+  .copy-email-button{
+    padding: 0.5em 1em;
     color: var(--text);
     text-decoration: none;
-    padding: 1em 2em;
     background-color: var(--primary);
-    border-radius: 20px;
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 20px;
+    border-radius: 100px;
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
   }
   
-  .github-button:hover{
+  .email-button{
+    padding: 1em 2em;
+    color: var(--text);
+    text-decoration: none;
+    background-color: var(--primary);
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .email-button:hover,
+  .copy-email-button:hover{
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 25px;
-    box-shadow: 5px 5px 0px 1px var(--secondary) ;
+    box-shadow: 3px 3px 0px 1px var(--secondary) ;
+    margin-bottom: 3px;
   }
-  
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
+
+  .hidden{
+    display: none;
   }
-  
-  @media screen and (max-width: 600px) {
-    .png-main-circle{
-      width: 50%;
-    }
-  
-    .banner-title{
-      font-size: 10vw;
-    }
+
+  #clipboard-svg{
+    fill: white;
   }
