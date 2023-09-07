@@ -15,6 +15,12 @@
     margin: auto;
     padding: 0%;
   }
+
+  p{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 90%;
+    text-align: center;
+  }
   
   .center-img{
     display: block;
