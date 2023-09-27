@@ -27,7 +27,7 @@
     <p>(discord is ethdn)</p>
     
     <div class="email-button-container">
-      <a class="email-button" href="mailto:ethanmahlke@gmail.com">
+      <a class="email-button" href="mailto:me@ethxn.xyz">
         Email me!!
       </a>
       <a class="copy-email-button" onclick="copyEmailButtonOnClick()">
@@ -41,22 +41,5 @@
         </svg>
       </a>
     </div>
-    <script>
-      let i = 0
-
-      function copyEmailButtonOnClick() {
-        document.getElementsByClassName("email-button")[0].innerHTML = "Copied ->";
-        setTimeout(function(){
-          document.getElementsByClassName("email-button")[0].innerHTML = "Email me!!";
-        }, 2000);
-        navigator.clipboard.writeText("ethanmahlke@gmail.com");
-        if (i === 0){
-          
-          document.getElementById("clipboard-svg").classList.toggle("hidden");
-          document.getElementById("clipboard-svg-fill").classList.toggle("hidden");
-          i++;
-        }
-      }
-    </script>
   </body>
 </html>

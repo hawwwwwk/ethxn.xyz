@@ -115,7 +115,13 @@
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
   }
-  .copy-email-button:active{
+
+  .copy-email-button-focus{
+    transition: all 0.3s ease;
+    background-color: var(--secondary);
+  }
+
+  .email-button:active{
     transition: all 0.3s ease;
     background-color: var(--secondary);
   }
