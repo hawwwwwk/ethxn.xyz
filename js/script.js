@@ -1,10 +1,11 @@
 let i = 0;
-let emailButton = document.getElementsByClassName("email-button")[0];
-let copyEmailButton = document.getElementsByClassName("copy-email-button")[0];
-let clipboardSvg = document.getElementById("clipboard-svg");
-let clipboardSvgFill = document.getElementById("clipboard-svg-fill");
 
 function copyEmailButtonOnClick() {
+  
+  let emailButton = document.getElementsByClassName("email-button")[0];
+  let copyEmailButton = document.getElementsByClassName("copy-email-button")[0];
+  let clipboardSvg = document.getElementById("clipboard-svg");
+  let clipboardSvgFill = document.getElementById("clipboard-svg-fill");
   emailButton.innerHTML = "Copied →";
   setTimeout(function(){
     emailButton.innerHTML = "Email me!!";
