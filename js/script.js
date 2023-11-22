@@ -6,10 +6,10 @@ function copyEmailButtonOnClick() {
   let copyEmailButton = document.getElementsByClassName("copy-email-button")[0];
   let clipboardSvg = document.getElementById("clipboard-svg");
   let clipboardSvgFill = document.getElementById("clipboard-svg-fill");
-  emailButton.innerHTML = "Copied →";
+  emailButton.innerHTML = "copied →";
   setTimeout(function(){
-    emailButton.innerHTML = "Email me!!";
-  }, 2000);
+    emailButton.innerHTML = "email me !";
+  }, 1200);
 
   navigator.clipboard.writeText("me@ethxn.xyz");
 

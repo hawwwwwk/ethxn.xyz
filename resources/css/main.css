@@ -101,13 +101,12 @@
   }
 
   .cat-picture{
-    width: 20%;
     border-radius: 20px;
     margin: 0 10px;
   }
 
   .copy-email-button{
-    padding: 0.5em 1em;
+    padding: 0.75em 1em;
     color: var(--text);
     text-decoration: none;
     background-color: var(--primary);
@@ -132,7 +131,8 @@
     text-decoration: none;
     background-color: var(--primary);
     border-radius: 20px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 90%;
     transition: all 0.3s ease;
   }
   
@@ -173,4 +173,10 @@
 
   #clipboard-svg{
     fill: white;
+  }
+
+  .highlight {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 2px; 
+    border-radius: 3px; 
   }
