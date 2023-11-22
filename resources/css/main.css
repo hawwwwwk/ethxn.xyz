@@ -1,182 +1,259 @@
 :root{
-    --text: #f7fcfd;
-    --background: #0b2328;
-    --primary: #ba4a36;
-    --secondary: #12343a;
-    --accent: #5b8c95;
+    --text: #e0f0e9;
+    --background: #405b4f;
+    --primary: #9ad0b8;
+    --secondary: #0d1b15;
+    --accent: #4ba07a;
   }
   
-  body{
-    background-color: var(--background);
-    color: var(--text);
-  }
+body{
+  background-color: var(--background);
+  color: var(--text);
+}
+
+nav{
+  margin: auto;
+  padding: 0%;
+}
+
+p{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 90%;
+  text-align: center;
+}
+
+.center-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text{
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.sitename{
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  font-size: 110%;
+  font-family: 'Roboto Mono', monospace;
+  justify-content: center;
+  width: fit-content;
+  transition: opacity 0.3s ease;
+}
+
+.sitename:hover{
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.png-main-circle{
+  border-style: solid;
+  border-width: thick;
+  border-color: var(--primary);
+  border-radius: 50%;
+  margin-top: 3%;
+  width: 20%; 
+}
+
+.links-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
+}
+
+.email-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: 10px;
+  height: 4em;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.copy-email-button,
+.email-button{
+  display: inline-flex;
+  margin: 0 3px;
+}
+
+.cat-container{
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.cat-picture{
+  border-style: dashed;
+  border-color: var(--secondary);
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.copy-email-button{
+  padding: 0.75em 1em;
+  color: var(--background);
+  text-decoration: none;
+  background-color: var(--primary);
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.copy-email-button-focus{
+  transition: all 0.3s ease;
+  background-color: var(--secondary);
+}
+
+.email-button{
+  padding: 1em 2em;
+  color: var(--background);
+  text-decoration: none;
+  background-color: var(--primary);
+  border-radius: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 90%;
+  transition: all 0.3s ease;
+}
+
+.email-button:hover,
+.copy-email-button:hover{
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0px 1px var(--secondary);
+  margin-bottom: 3px;
+}
+
+.email-button:active,
+.copy-email-button:active{
+  transition: all 0.2s ease;
+  box-shadow: 1px 1px 0px 1px var(--secondary);
+  margin-bottom: 2px;
+}
+
+.hidden{
+  display: none;
+}
+
+.clipboard-notification{
+  text-align: center;
+  margin-left: 21vw;
+  background:var(--accent);
+  border-radius: 10px;
+  width:100px;
+  height:30px;
+  position: fixed;
+  display: inline;
+}
+
+.clipboard-notification:before{
+  content:"";
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  top: 5px;
+  left: -16px; 
+  border-width: 10px;
+  border-color: transparent var(--accent) transparent transparent;
+  border-style: solid;
+}
+
+#clipboard-svg{
+  fill: var(--background);
+}
+
+.highlight {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 2px; 
+  border-radius: 3px; 
+}
+/* Container for the dropdown */
+.dropdown {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 2em;
+  z-index: 1000;
+}
+
+/* Button to open the dropdown */
+.dropbtn {
+  transition: all 0.3s ease;
+  opacity: 100%;
+  background-color: var(--primary);
+  color: var(--background);
+  margin-top: 5px;
+  padding: 0.5em 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 60%;
+  text-align: center;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: var(--primary);
+  z-index: 1;
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.1s ease, visibility 0.1s ease;
   
-  nav{
-    margin: auto;
-    padding: 0%;
-  }
+  border-radius: 5px;
+}
 
-  p{
-    font-family: 'Roboto Mono', monospace;
-    font-size: 90%;
-    text-align: center;
-  }
-  
-  .center-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .center-text{
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-  }
-  
-  .sitename{
-    color: var(--text);
-    text-decoration: none;
-    display: flex;
-    font-size: 110%;
-    font-family: 'Roboto Mono', monospace;
-    justify-content: center;
-    width: fit-content;
-    transition: opacity 0.3s ease;
-  }
-  
-  .sitename:hover{
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-  }
-  
-  .png-main-circle{
-    border-style: solid;
-    border-width: thick;
-    border-color: var(--primary);
-    border-radius: 50%;
-    margin-top: 3%;
-    width: 20%; 
-  }
-  
-  .banner-title{
-    color: white;
-    width: fit-content;
-  }
+/* Show the dropdown content when 'show' class is added */
+.dropdown-content.show {
+  opacity: 1; /* Fully opaque */
+  visibility: visible; /* Make it visible */
+}
 
-  .links-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 33%;
-  }
-  
-  .email-button-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    margin: 10px;
-    height: 4em;
-    right: 0;
-    left: 0;
-    bottom: 0;
-  }
+/* Links inside the dropdown */
+.dropdown-content a {
+  transition: all 0.3s ease;
+  padding: 5px 0 0 5px;
+  text-decoration: none;
+  display: block;
+}
 
-  .copy-email-button,
-  .email-button{
-    display: inline-flex;
-    margin: 0 3px;
-  }
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  transition: all 0.2s ease;
+  opacity: 80%;
+}
 
-  .cat-container{
-    justify-content: center;
-    align-self: center;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-  }
+.dropdown-content a:active {
+  transition: all 0.1s ease;
+  opacity: 65%;
+}
 
-  .cat-picture{
-    border-radius: 20px;
-    margin: 0 10px;
-  }
+/* Change dropdown button on hover */
+.dropbtn:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 90%;
+}
 
-  .copy-email-button{
-    padding: 0.75em 1em;
-    color: var(--text);
-    text-decoration: none;
-    background-color: var(--primary);
-    border-radius: 100px;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
+/* Hide dropdown on mobile devices */
+@media screen and (max-width: 768px) {
+  .dropdown {
+      display: none;
   }
-
-  .copy-email-button-focus{
-    transition: all 0.3s ease;
-    background-color: var(--secondary);
-  }
-
-  .email-button:active{
-    transition: all 0.3s ease;
-    background-color: var(--secondary);
-  }
-  
-  .email-button{
-    padding: 1em 2em;
-    color: var(--text);
-    text-decoration: none;
-    background-color: var(--primary);
-    border-radius: 20px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 90%;
-    transition: all 0.3s ease;
-  }
-  
-  .email-button:hover,
-  .copy-email-button:hover{
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 3px 3px 0px 1px var(--secondary) ;
-    margin-bottom: 3px;
-  }
-
-  .hidden{
-    display: none;
-  }
-
-  .clipboard-notification{
-    text-align: center;
-    margin-left: 21vw;
-    background:var(--accent);
-    border-radius: 10px;
-    width:100px;
-    height:30px;
-    position: fixed;
-    display: inline;
-  }
-
-  .clipboard-notification:before{
-    content:"";
-    position: absolute;
-    height: 0px;
-    width: 0px;
-    top: 5px;
-    left: -16px; 
-    border-width: 10px;
-    border-color: transparent var(--accent) transparent transparent;
-    border-style: solid;
-  }
-
-  #clipboard-svg{
-    fill: white;
-  }
-
-  .highlight {
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 2px; 
-    border-radius: 3px; 
-  }
+}
