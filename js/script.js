@@ -8,7 +8,7 @@ function copyEmailButtonOnClick() {
   let clipboardSvgFill = document.getElementById("clipboard-svg-fill");
   emailButton.innerHTML = "copied →";
   setTimeout(function(){
-    emailButton.innerHTML = "email me !";
+    emailButton.innerHTML = "email me";
   }, 1200);
 
   navigator.clipboard.writeText("me@ethxn.xyz");
